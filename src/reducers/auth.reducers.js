@@ -16,24 +16,28 @@ export default (state=initState,action)=>{
         case googleauthconstants.AUTHGOOGLE_REQUEST:
             state={
                 ...state,
-                authenticating:true
+                loading:true
             }
             break;
-        case googleauthconstants.AUTHGOOGLE_FAILURE:
+        case googleauthconstants.AUTHGOOGLE_SUCCESS:
                 state={
                     ...state,
+                    displayName:action.payload.displayName,
+                    authenticate:true,
+                    authenticating:false
                     
                    
                 }
                 break;
-        case googleauthconstants.AUTHGOOGLE_SUCCESS:
+        case googleauthconstants.AUTHGOOGLE_FAILURE:
                     state={
                         ...state,
                         loading:false,
-                        message:action.payload.message
+                        message:action.payload.error
                     }            
           
             break;
     }
+    console.log(state);
     return state;
 }
