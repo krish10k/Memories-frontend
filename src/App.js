@@ -7,6 +7,8 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { isUserLoggedIn } from './actions';
+import Card from './components/UI/Card';
+import Scroller from './components/UI/Scroller';
 
 function App() {
   const dispatch=useDispatch();
@@ -20,6 +22,7 @@ function App() {
     <div className="App">
      <Router>
        <Switch>
+       <Route path="/memo" exact component={Scroller} />
          <Route path="/" exact component={LandPage} />
          <Route path="/home" exact component={Home} />
        </Switch>

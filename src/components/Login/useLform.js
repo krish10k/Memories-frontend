@@ -7,7 +7,6 @@ import { login } from '../../actions';
 * @author
 * @function useLform
 **/
-
 const useLform = (validate) => {
     const dispatch=useDispatch();
     const[values,setValues]=useState({        
@@ -32,8 +31,6 @@ const useLform = (validate) => {
         dispatch(login(user))
     }
     return{handleChange,values,handleSubmit,errors}
-
-
  }
 
 export default useLform;

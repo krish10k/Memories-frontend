@@ -5,9 +5,7 @@ import { googleauthconstants, loginconstants, signupconstants } from "./constant
 export const authgoogle=()=>{
     return async(dispatch)=>{
         dispatch({type:googleauthconstants.AUTHGOOGLE_REQUEST});
-        console.log("hello")
         const res=await axios.get("/auth/google")
-        console.log("hell")
         if(res.status===200){
             const{token,displayName}=res.data
             console.log(token);
