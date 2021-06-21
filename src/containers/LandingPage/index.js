@@ -47,8 +47,8 @@ const showLmodal=()=>{
     
        <Header /> */}
        <h1>Memoriae</h1>
-       
-    <Container>
+   
+    {/* <Container> */}
         <Button onClick={showModal}>
             SignUp
         </Button>
@@ -57,7 +57,8 @@ const showLmodal=()=>{
             Login
         </Button>
         <Lmodal lmodal={lmodal} setLmodal={setLmodal} />
-    </Container>
+        <Div1 /> <br/> <Div2 />
+    {/* </Container> */}
     </div>
    )
 

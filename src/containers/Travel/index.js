@@ -72,11 +72,6 @@ const Travel = (props) => {
    
    </Layout>
        </>
-         
-         
-
-
-
    
  
    );

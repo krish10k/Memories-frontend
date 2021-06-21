@@ -11,7 +11,7 @@ const Layout = (props) => {
   return(
     <>
         <Navbar/>
-        
+
 {props.children}
 
     </>
