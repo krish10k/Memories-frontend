@@ -127,6 +127,10 @@ const CModal = (props) => {
   if(sign.authenticate){
     return <Redirect to={'/home'}/>
 }
+
+// if(!sign.authenticate){
+//   return <Redirect to={'/'}/>
+// }
   return(
     <>
     {modal ? (
@@ -144,7 +148,9 @@ const CModal = (props) => {
         {/* <a href="http://localhost:2000/auth/google" className="btn red darken-1"> */}
         <a onClick={authGoogle} className="btn red darken-1">
         <i class="fab fa-google left"></i> Log In With Google
-    </a></div>
+    </a>
+    </div>
+
        <p><b>OR</b></p>
     
         <div className='form-inputs'>

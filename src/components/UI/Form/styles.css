@@ -1,0 +1,20 @@
+.formmm{
+    padding-top: 10rem;
+    padding: 3rem;
+    border: solid 3 px;
+    background-color: #ecf6f3;
+position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    /* max-height: 90%; */
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+}
+.rosh{
+    background-color:whitesmoke;
+}

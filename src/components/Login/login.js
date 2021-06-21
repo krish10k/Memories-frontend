@@ -124,6 +124,10 @@ const Lmodal = (props) => {
   if(sign.authenticate){
     return <Redirect to={'/home'}/>
 }
+
+// if(!sign.authenticate){
+//   return <Redirect to={'/'}/>
+// }
    
   return(
       <>

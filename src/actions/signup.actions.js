@@ -1,6 +1,6 @@
 import axios from "../helpers/axios";
 
-import { googleauthconstants, loginconstants, signupconstants } from "./constants"
+import { googleauthconstants, loginconstants, logoutconstants, signupconstants } from "./constants"
 
 export const authgoogle=()=>{
     return async(dispatch)=>{
@@ -83,5 +83,29 @@ export const isUserLoggedIn=()=>{
                 payload:{error:'failed to login'}
             });
         }
+    }
+}
+
+
+export const signout=()=>{
+    return async dispatch=>{
+
+        dispatch({
+            type:logoutconstants.LOGOUT_REQUEST
+        })
+       const res=await axios.post('/auth/signout');
+       if(res.status===200){
+        localStorage.clear();
+        dispatch({
+            type:logoutconstants.LOGOUT_SUCCESS
+        });
+       }else{
+        dispatch({
+            type:logoutconstants.LOGOUT_FAILURE,
+            payload:{error:res.data.error}
+        });
+       }
+
+        
     }
 }

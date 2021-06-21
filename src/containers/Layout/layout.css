@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+
 :root {
     font-size: 16px;
     font-family: sans-serif;
@@ -7,10 +9,8 @@
     --bg-secondary: #9b36ee;
     --transition-speed: 600ms;
   }
-  body {
-    margin: 0;
-    padding: 0;
-  }
+
+
   
   main {
     margin-left: 5rem;
@@ -29,6 +29,7 @@
   }
   
   .navbar {
+    position:fixed;
       z-index: 100;
     margin-top: 5rem;
     width: 5rem;
@@ -40,12 +41,13 @@
   }
   
   .appbar {
-    /* margin-top: -3rem; */
+    margin-top: -5rem;
     width: 100vw;
     height: 5rem;
     background-color: rgba(176, 185, 201, 0.2);
     position: fixed;
     transition: width 600ms ease;
+
   }
   
   .navbar-nav {
@@ -63,7 +65,7 @@
     list-style: none;
     padding-left:10%;
     padding-right: 1vw;
-    margin-top: ;
+    /* margin-top: ; */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -72,6 +74,23 @@
   
   .tab-item{
     width: 100%;
+    display: inline-grid;
+  }
+  .tab-item:first-child{
+    justify-content: left;
+    padding-left: 0.5rem;
+    font-family: roboto;
+    font-weight: 400;
+    font-size: 3rem;
+    
+  }
+  .tab-item:first-child img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 70px;
+    height: 100%;
+    margin-right: 10px;
+padding-top: 1rem;
   }
   .nav-item  {
     width: 100%;
@@ -98,6 +117,8 @@
   
   .tab-item:last-child {
     margin-left: auto;
+    justify-content: right;
+    display: inline-grid;
   }
   
   .nav-link {
@@ -149,7 +170,9 @@
     letter-spacing: 0.3ch;
     width: 100%;
   }
-  
+  .name{
+    font-family: 'Caveat Brush', cursive;
+  }
   .logo svg {
     transform: rotate(0deg);
     transition: var(--transition-speed);

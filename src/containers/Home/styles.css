@@ -4,3 +4,24 @@
     width: 80%;
  margin: auto;
 }
+
+.floating_button{
+	width: 80px;
+						height: 80px;
+						background:#b65cff;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						text-decoration: none;
+						border-radius: 50%;
+						color: white;
+						font-size: 20px;
+						box-shadow: 2px 2px 5px rgba(184, 176, 176, 0.25);
+						position: fixed;
+						right: 20px;
+						bottom: 20px;
+						outline: rgb(0, 0, 0);
+						border: none;
+						cursor: pointer;
+
+}

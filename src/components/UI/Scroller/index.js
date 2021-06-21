@@ -20,7 +20,7 @@ const Scroller = (props) => {
             <picture>
               <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?1" />
             </picture>
-            <figcaption>Legends bruhhh hbunbju hbjbnj bhbhjb bhybj hbhbjn hbhbh
+            <figcaption>Legends 
             </figcaption>
           </figure></Link></li>
           <li><Link to="/"><figure>
