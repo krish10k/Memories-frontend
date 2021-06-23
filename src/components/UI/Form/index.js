@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Col, Container, Row, Form ,Button } from 'react-bootstrap'
+import { Col, Container, Row, Form, Button } from 'react-bootstrap'
 import { useState } from 'react'
 import Input from '../Input'
 import { useDispatch, useSelector } from 'react-redux'
@@ -14,18 +14,18 @@ import { Link } from 'react-router-dom'
 
 
 
- const UploadPost = (props) => {
+const UploadPost = (props) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [tags, setTags] = useState([]);
   const [category, setCategory] = useState('');
   const [postImg, setPostImg] = useState([]);
- 
+
 
   const dispatch = useDispatch();
-//   useEffect(() => {
-//     // dispatch(getPosts());
-//   }, []);
+  //   useEffect(() => {
+  //     // dispatch(getPosts());
+  //   }, []);
 
 
   const submitPostForm = (e) => {
@@ -43,10 +43,8 @@ import { Link } from 'react-router-dom'
     // //   dispatch(getPosts())
     // } );
     dispatch(addPost(form))
-  
-  }
 
-//   const handleShow = () => setShow(true);
+  }
 
   const handlePostImg = (e) => {
     setPostImg([
@@ -54,77 +52,76 @@ import { Link } from 'react-router-dom'
       e.target.files[0]
     ])
   }
-    return (
-      <> 
-      <Layout />  
+  return (
+    <>
+      <Layout />
       <div className="rosh">
-      <Container>
+        <Container>
           <Paper>
-       <Form className="formmm"
-       onSubmit={submitPostForm}
-      >
-        <Input
-          label="Title"
-          value={title}
-          placeholder={'Title'}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-
-        <Input
-          label="Memories"
-          value={description}
-          placeholder={'Describe Memory'}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-       
-          
-            <Input
-              label="Tags"
-              value={tags}
-              placeholder={'#tags'}
-              onChange={(e) => setTags(e.target.value)}
-            />
-      <Row>
-          <Col md={6} className="justify-containt-center">
-            <label>Select Genre</label>
-            <select
-              className="form-control"
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
+            <Form className="formmm"
+              onSubmit={submitPostForm}
             >
-               <option default value="">Select</option>
-              <option value="event">Events</option>
-              <option value="college">Collage Life</option>
-              <option value="travel">Travelling</option>
-              <option value="week">Best Memories of week</option>
-            </select>
-          </Col>
-        </Row>
-        <Row>
-        {
-          postImg.length > 0 ?
-            postImg.map((pic, index) => <div key={index}>{pic.name}</div>) : null
-        }
-          <Col md={6} className="justify-containt-center">
-        <Form.File className="file-input"
-          id="postImg"
-          label="Add Pictures"
-          onChange={handlePostImg}
-          lang="en"
-          custom
-        />
-       <Button variant="primary" type="submit" className="ee"><b style={{color:"white"}}>Submit</b>
-  </Button>
-       
-   
-  </Col>
-        </Row>
-      </Form>
-      </Paper>
-      </Container>
+              <Input
+                label="Title"
+                value={title}
+                placeholder={'Title'}
+                onChange={(e) => setTitle(e.target.value)}
+              />
+
+              <Input
+                label="Memories"
+                value={description}
+                placeholder={'Describe Memory'}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+
+              <Input
+                label="Tags"
+                value={tags}
+                placeholder={'#tags'}
+                onChange={(e) => setTags(e.target.value)}
+              />
+              <Row>
+                <Col md={6} >
+                  <label>Select Genre</label>
+                  <select
+                    className="form-control"
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}
+                  >
+                    <option default value="">Select</option>
+                    <option value="event">Events</option>
+                    <option value="college">Collage Life</option>
+                    <option value="travel">Travelling</option>
+                    <option value="week">Best Memories of week</option>
+                  </select>
+                </Col>
+              </Row>
+              <Row>
+                {
+                  postImg.length > 0 ?
+                    postImg.map((pic, index) => <div key={index}>{pic.name}</div>) : null
+                }
+                <Col md={6} className="justify-containt-center">
+                  <Form.File className="file-input"
+                    id="postImg"
+                    label="Add Pictures"
+                    onChange={handlePostImg}
+                    lang="en"
+                    custom
+                  />
+                  <Button variant="primary" type="submit" className="ee"><b style={{ color: "white" }}>Submit</b>
+                  </Button>
+
+
+                </Col>
+              </Row>
+            </Form>
+          </Paper>
+        </Container>
       </div>
     </>
-    )
-  }
+  )
+}
 
-  export default UploadPost
+export default UploadPost
